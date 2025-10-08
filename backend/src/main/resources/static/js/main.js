@@ -1,4 +1,4 @@
-"use strick";
+"use strict";
 const usernamePage = document.querySelector("#username-page");
 const chatPage = document.querySelector("#chat-page");
 const usernameForm = document.querySelector("#usernameForm");
@@ -40,11 +40,30 @@ function onConnected() {
     JSON.stringify({ nickName: nickname, fullName: fullname, status: "ONLINE" })
   );
 
-  // connectingElement.classList.add("hidden");
-  // messageForm.classList.remove("hidden");
-  // // chatArea.classList.remove("hidden");
-  // messageForm.addEventListener("submit", sendMessage, true);
+  // find and desplay the connected users
+  findAndDisplayConnectedUsers().then();
 }
+
+async function findAndDisplayConnectedUsers() {
+  const connectedUsersResponse = await fetch("/users");
+  let connectedUsers = await connectedUsersResponse.json();
+
+  connectedUsers = connectedUsers.filter((user) => user.nickName !== nickname);
+  const connectedUsersList = document.getElementById("connectedUsers");
+  connectedUsersList.innerHTML = "";
+
+  connectedUsers.forEach((user) => {
+    appendUserElement(user, connectedUsersList);
+    if (connectedUsers.index(user) === connectedUsers.length - 1) {
+      // add a seperator
+      const separator = document.createElement("li");
+      separator.classList.add("separator");
+      connectedUsersList.appendChild(separator);
+    }
+  });
+}
+
+function appendUserElement(user, listElement) {}
 
 function onError() {}
 
