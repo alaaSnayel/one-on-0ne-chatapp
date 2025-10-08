@@ -63,7 +63,28 @@ async function findAndDisplayConnectedUsers() {
   });
 }
 
-function appendUserElement(user, listElement) {}
+function appendUserElement(user, listElement) {
+  const listItem = document.createElement("li");
+  listItem.classList.add("user-item");
+  listItem.id = user.nickName;
+
+  const userImg = document.createElement("img");
+  userImg.src = "../img/user.png";
+  userImg.alt = user.fullName;
+
+  const usernameSpan = document.createElement("span");
+  usernameSpan.textContent = user.fullName;
+
+  const receivedMsgs = document.createElement("span");
+  receivedMsgs.textContent = "0";
+  receivedMsgs.classList.add("nbr-msg", "hidden");
+
+  listItem.appendChild(userImg);
+  listItem.appendChild(usernameSpan);
+  listItem.appendChild(receivedMsgs);
+
+  connectedUsersList.appendChild(listItem);
+}
 
 function onError() {}
 
