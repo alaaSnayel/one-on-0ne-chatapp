@@ -22,7 +22,7 @@ The app demonstrates how to:
 
 | Chat Page | Online Users |
 |------------|--------------|
-| ![Chat Page](ScreenShot1.png) | ![Online Users](ScreenShot2.png) |
+| ![Login Page](ScreenShot1.png) | ![Online Users](ScreenShot2.png) |
 
 ---
 
@@ -45,28 +45,6 @@ The app demonstrates how to:
 5. Messages are saved in MongoDB for persistence  
 
 ---
-
-## 🛠️ Installation & Setup
-
-Follow these steps to run the project locally:
-
-```bash
-# 1️⃣ Clone the repository
-git clone https://github.com/<your-username>/one-on-one-chat-app.git
-
-# 2️⃣ Navigate to the project directory
-cd one-on-one-chat-app
-
-# 3️⃣ Build the project
-./mvnw clean install
-
-# 4️⃣ Run the application
-./mvnw spring-boot:run
-
-Then open your browser and visit:
-
-http://localhost:8080
-
 🧰 Technologies Used
 
 Spring Boot 3.x.x – backend framework
@@ -81,3 +59,27 @@ HTML / CSS / JavaScript – frontend UI
 
 This project was built following the tutorial by Alibou as a learning exercise.
 All code was re-implemented and customized by Alaa for personal practice and deeper understanding.
+
+---
+
+## 🛠️ Installation & Setup
+
+Follow these steps to run the project locally:
+
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/<your-username>/one-on-one-chat-app.git
+
+# 2️⃣ Navigate to the project directory
+cd one-on-one-chat-app
+cd backend
+
+# 3️⃣ Build the project
+./mvnw clean install
+
+# 4️⃣ Run the application
+./mvnw spring-boot:run
+
+Then open your browser and visit:
+
+http://localhost:8080
